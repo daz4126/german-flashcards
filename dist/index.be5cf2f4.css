@@ -1,0 +1,222 @@
+html{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1,h2,h3{
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;  
+    background: linear-gradient(135deg, red, yellow);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-size: 100%;
+    -webkit-box-decoration-break: clone;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.15); 
+  }
+  
+  body{
+    background: #222;
+  }
+  
+  
+  h1{
+    font-size: 64px;
+    text-align: center;
+  }
+  
+  h2{
+    font-size: 24px;
+    padding: 1em 1em 1em;
+  }
+  
+  h3,h4{
+    font-size: 12px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0 auto; padding: 0;
+  }
+  :active, :hover, :focus {
+    outline: 0!important;
+    outline-offset: 0;
+  }
+  ::before,
+  ::after {
+    position: absolute;
+    content: "";
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 33px auto;
+    padding: 2em 1em 1em;
+  }
+  div.buttons button {
+    position: relative;
+    width: auto; height: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    min-width: 150px;
+  }
+    div.buttons span {         
+      position: relative;
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 15px 20px;
+      transition: 0.3s;
+    }
+  .buttons span {
+    color: red;
+    background-color: rgba(255,255,255,0.2);
+  }
+  .buttons span:hover {
+    color: white;
+  }
+  div.buttons button::before,
+  div.buttons button::after {
+    width: 20%; height: 2px;
+    background-color: white;
+    z-index: 2;
+  }
+  
+  div.buttons button::before,
+  div.buttons button::after {
+    top: 0;
+    transition: width 0.2s 0.35s ease-out;
+  }
+  div.buttons button::before {
+    right: 50%;
+  }
+  div.buttons button::after {
+    left: 50%;
+  }
+  div.buttons button:hover::before,
+  div.buttons button:hover::after {
+    width: 50%;
+    transition: width 0.2s ease-in;   
+  }
+  
+  div.buttons span::before,
+  div.buttons span::after {
+    width: 0%; height: 0%;
+    background: transparent;
+    opacity: 0;
+    z-index: 2;
+    transition: width 0.2s ease-in, height 0.15s 0.2s linear, opacity 0s 0.35s;
+  }
+  div.buttons span::before {
+    top: 0; left: 0;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+  div.buttons span::after {
+    top: 0; right: 0;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+  div.buttons span:hover::before,
+  div.buttons span:hover::after {
+    width: 50%; height: 96%;
+    opacity: 1;
+    transition: height 0.2s 0.2s ease-in, width 0.2s 0.4s linear, opacity 0s 0.2s;   
+  }
+  
+  .flashcards{
+    width: 400px;
+    max-width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, cornflowerblue,rgba(3, 2, 36, 0.6));
+    margin: 0 auto;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    border: 3px solid orange;
+    border-radius: 20px;
+  }
+  
+  .userInput{
+    color: black;
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    width: 9em;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  label{
+    color: white;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;  
+    padding: 1em 1em 1em;
+  }
+  
+  @media (max-width: 599px) {
+    h1{
+      font-size: 28px;
+    }
+    h2{
+      font-size: 16px;
+    }
+    .buttons{
+      display: block;
+      margin-top: 0;
+    }
+    div.buttons button{
+      display: block;
+      margin: 10px auto
+    }
+  }
+  
+  #flashcards{
+    color: white;
+    font-size: 24px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  
+  .button-type2{
+    cursor: pointer;
+    margin: 10px 0;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow:hidden;
+    background-color: transparent;
+    width: 100%;
+    max-width: 400px;
+    border: 3px solid red;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  #allCards{
+    font-size: 36px;
+    text-decoration-line: underline;
+  }
+/*# sourceMappingURL=index.be5cf2f4.css.map */
