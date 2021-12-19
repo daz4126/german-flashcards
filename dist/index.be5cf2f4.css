@@ -83,10 +83,11 @@ html{
     }
   .buttons span {
     color: red;
-    background-color: rgba(255,255,255,0.2);
+    background-color: #333;
   }
   .buttons span:hover {
     color: white;
+    background: #444;
   }
   div.buttons button::before,
   div.buttons button::after {
@@ -152,7 +153,7 @@ html{
     font-weight: 300;
     font-family: 'Lato', sans-serif;
     cursor: pointer;
-    border: 3px solid orange;
+    border: 3px solid white;
     border-radius: 20px;
   }
   
@@ -195,10 +196,16 @@ html{
   
   #flashcards{
     color: white;
-    font-size: 24px;
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
+    font-size: 18px;
+    font-family: sans-serif;
+    width: 400px;
+    max-width: 100%;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  #flashcards tr{
+    
   }
   
   .next-button{
