@@ -484,7 +484,7 @@ ${state.adding ? _nannyState.html`
             current: state.current === "german" ? "english" : "german"
         })
     }> <span>${state[state.current]}</span> </button>
-  <button class="button-type2" onclick=${(e)=>Update(cards)
+  <button class="next-button" onclick=${(e)=>Update(cards)
     }>NEXT</button>
 </div>
 <div class="buttons">
@@ -497,7 +497,7 @@ ${state.adding ? _nannyState.html`
         })
     }><span>ADD CARD</span></button>
   <button onclick=${(e)=>Update(endCards)
-    }><span>EDIT CARDS</span></button>
+    }><span>DELETE CARDS</span></button>
 </div>` : _nannyState.html`
 <div class="buttons">
     <button onclick=${(e)=>Update(cards)
@@ -505,7 +505,7 @@ ${state.adding ? _nannyState.html`
     <ol id="flashcards"><span id="allCards">ALL CARDS:</span>
      ${state.flashcards.map((flashcard)=>_nannyState.html`
      <li>German: ${flashcard.german} - English: ${flashcard.english}
-     <button class="button-type2" data-word="${flashcard.german}" onclick=${(e)=>Update(deleteCard(e.target.dataset.word))
+     <button class="delete-button" data-word="${flashcard.german}" onclick=${(e)=>Update(deleteCard(e.target.dataset.word))
         }>DELETE</button></li>`
     )}
     </ol>

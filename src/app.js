@@ -24,12 +24,12 @@ ${state.adding ? html`
 state.started ? html`
 <div>
   <button class="flashcards" onclick=${e => Update({current: state.current === "german" ? "english" : "german"})}> <span>${state[state.current]}</span> </button>
-  <button class="button-type2" onclick=${e => Update(cards)}>NEXT</button>
+  <button class="next-button" onclick=${e => Update(cards)}>NEXT</button>
 </div>
 <div class="buttons">
   <button onclick=${e => Update({showFirst: state.showFirst === "german" ? "english" : "german"})}><span>${state.showFirst === "german" ? "English-German" : "German-English"}</span></button>
   <button onclick=${e => Update({adding: true})}><span>ADD CARD</span></button>
-  <button onclick=${e => Update(endCards)}><span>EDIT CARDS</span></button>
+  <button onclick=${e => Update(endCards)}><span>DELETE CARDS</span></button>
 </div>`
 : 
 html`
@@ -38,7 +38,7 @@ html`
     <ol id="flashcards"><span id="allCards">ALL CARDS:</span>
      ${state.flashcards.map(flashcard => html`
      <li>German: ${flashcard.german} - English: ${flashcard.english}
-     <button class="button-type2" data-word="${flashcard.german}" onclick=${e => Update(deleteCard(e.target.dataset.word))}>DELETE</button></li>`
+     <button class="delete-button" data-word="${flashcard.german}" onclick=${e => Update(deleteCard(e.target.dataset.word))}>DELETE</button></li>`
      )}
     </ol>
 `}`

@@ -57,8 +57,8 @@ html{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 33px auto;
-    padding: 2em 1em 1em;
+    margin: 0 auto;
+    padding: 1em;
   }
   div.buttons button {
     position: relative;
@@ -199,7 +199,7 @@ html{
     letter-spacing: 0.2em;
   }
   
-  .button-type2{
+  .next-button{
     cursor: pointer;
     margin: 10px 0;
     color: white;
@@ -213,6 +213,28 @@ html{
     border: 3px solid red;
     border-radius: 10px;
     font-weight: bold;
+  }
+
+  .next-button:hover{
+    background: orange;
+    color: #222;
+  }
+
+  .delete-button{
+    cursor: pointer;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    background-color: transparent;
+    border: orange 1px solid;
+    border-radius: 4px;
+    padding: 2px;
+  }
+
+  .delete-button:hover{
+    background: orange;
+    border-color: red;
+    color: #222;
   }
   
   #allCards{
