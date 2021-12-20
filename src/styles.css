@@ -208,6 +208,7 @@ html{
 
   #flashcards li{
     border-bottom: #333 dotted 1px;
+    padding: 4px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: left;
