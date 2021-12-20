@@ -18,7 +18,7 @@ ${state.started ? html`
   <button class="next-button" onclick=${e => Update(cards)}>NEXT</button>
 </div>
 <div class="buttons">
-  <button onclick=${e => Update({showFirst: state.showFirst === "german" ? "english" : "german"})}><span>${state.showFirst === "german" ? "🇬🇧-🇩🇪" : "🇩🇪-🇬🇧"}</span></button>
+  <button onclick=${e => Update({showFirst: state.showFirst === "german" ? "english" : "german"})}><span>${state.showFirst === "german" ? "🇩🇪 Ger - 🇬🇧 Eng" : "🇬🇧 Eng - 🇩🇪 Ger"}</span></button>
   <button onclick=${e => Update(endCards)}><span>EDIT CARDS</span></button>
 </div>`
 : 
@@ -32,26 +32,27 @@ html`
   <input type="text" name="german" class="userInput"></input>
 <label for="english">English: </label>
   <input type="text" name="english" class="userInput"></input>
-</form>
-<div class="buttons">
+  <div class="buttons">
   <button type="submit"><span>Add Card</span></button>
 </div></form>
+</form>
 <h2>Flashcards</h2>
-    <table id="flashcards">
+    <ul id="flashcards">
      ${state.flashcards.map(flashcard => html`
-     <tr><td>🇩🇪  ${flashcard.german}</td><td>🇬🇧 ${flashcard.english}</td><td>
-     <button class="delete-button" data-word="${flashcard.german}" onclick=${e => Update(deleteCard(e.target.dataset.word))}>DELETE</button></td></tr>`
+     <li><p>🇩🇪 ${flashcard.german}</p><p>🇬🇧 ${flashcard.english}</p>
+     <button class="delete-button" data-word="${flashcard.german}" onclick=${e => Update(deleteCard(e.target.dataset.word))}>DELETE</button></li>`
      )}
     </table>
 `}`
 
 const newCard = event => {
   event.preventDefault()
+  console.log('add')
   Update(addNewCard({english: event.target.english.value, german: event.target.german.value}))
 }
 
 const addNewCard = newFlashcard => state => ({
-  flashcards: [...state.flashcards, newFlashcard],
+  flashcards: [...state.flashcards, newFlashcard]
 })
 
 const cards = state => ({

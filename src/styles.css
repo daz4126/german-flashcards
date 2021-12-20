@@ -202,11 +202,21 @@ html{
     max-width: 100%;
     text-align: left;
     margin: 0 auto;
+    list-style: none;
   }
 
-  #flashcards tr{
-    
+
+  #flashcards li{
+    border: red solid 1px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: left;
   }
+
+  #flashcards li *{
+    border: green 1px solid;
+  }
+
   
   .next-button{
     cursor: pointer;
