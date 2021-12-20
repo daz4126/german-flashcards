@@ -207,16 +207,11 @@ html{
 
 
   #flashcards li{
-    border: red solid 1px;
+    border-bottom: #333 dotted 1px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: left;
   }
-
-  #flashcards li *{
-    border: green 1px solid;
-  }
-
   
   .next-button{
     cursor: pointer;
