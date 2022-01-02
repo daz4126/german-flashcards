@@ -508,16 +508,18 @@ ${state.started ? _nannyState.html`
      <button class="delete-button" data-word="${flashcard.german}" onclick=${(e)=>Update(deleteCard(e.target.dataset.word))
         }>DELETE</button></li>`
     )}
-    </table>
+    </ul>
 `}`
 ;
 const newCard = (event)=>{
     event.preventDefault();
-    console.log('add');
     Update(addNewCard({
         english: event.target.english.value,
         german: event.target.german.value
     }));
+    event.target.german.value = "";
+    event.target.english.value = "";
+    event.target.german.focus();
 };
 const addNewCard = (newFlashcard)=>(state)=>({
             flashcards: [
