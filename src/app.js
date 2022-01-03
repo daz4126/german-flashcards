@@ -4,8 +4,8 @@ import { flashcards } from './flashcards.js'
 const randomNumber = n => Math.ceil(Math.random()*n)
 
 function chooseFlashcard(flashcards){
-  const choose = randomNumber(flashcards.length)
-  return flashcards[choose]
+  const number = randomNumber(flashcards.length)
+  return flashcards[number]
 }
 
 const View = state =>
@@ -14,12 +14,12 @@ html`
 
 ${state.started ? html`
 <div>
-  <button class="flashcards" onclick=${e => Update({current: state.current === "german" ? "english" : "german"})}> <span>${state[state.current]}</span> </button>
+  <button class="flashcards" onclick=${e => Update({current: state.current === "german" ? "english" : "german"})}> <span>${state[state.current]}</span></button>
   <button class="next-button" onclick=${e => Update(cards)}>NEXT</button>
 </div>
 <div class="buttons">
   <button onclick=${e => Update({showFirst: state.showFirst === "german" ? "english" : "german"})}><span>${state.showFirst === "german" ? "🇩🇪 Ger - 🇬🇧 Eng" : "🇬🇧 Eng - 🇩🇪 Ger"}</span></button>
-  <button onclick=${e => Update(endCards)}><span>EDIT CARDS</span></button>
+  <button onclick=${e => Update(editCards)}><span>EDIT CARDS</span></button>
 </div>`
 : 
 html`
@@ -60,22 +60,21 @@ const addNewCard = newFlashcard => state => ({
 const cards = state => ({
   started: true,
   current: state.showFirst,
-  ...chooseFlashcard(state.flashcards),
+  ...chooseFlashcard(state.flashcards)
 })
 
 const deleteCard = word => state => ({
   flashcards: state.flashcards.filter(flashcard => flashcard.german != word)
 })
 
-const endCards = state => ({
-  started: false,
-})
+const editCards = state => ({ started: false })
 
 const State = {
   started: true,
   current: "german",
   showFirst: "german",
   flashcards,
+  ...chooseFlashcard(flashcards),
   LocalStorageKey: "German-flashcards",
   View
 }
